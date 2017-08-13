@@ -1,21 +1,12 @@
-function [theta] = normalEqn(X, y)
+function [theta] = normalEqn(X, y, lambda=0)
 %NORMALEQN Computes the closed-form solution to linear regression 
 %   NORMALEQN(X,y) computes the closed-form solution to linear 
 %   regression using the normal equations.
 
-% ====================== YOUR CODE HERE ======================
-% Instructions: Complete the code to compute the closed form solution
-%               to linear regression and put the result in theta.
-%
 
-% ---------------------- Sample Solution ----------------------
+lambdaMatrix = eye(size(X,2));
+lambdaMatrix(1,1) = 0; % dont penalize theta(0) intercept term
 
-
-theta=pinv(X'*X)*X'*y;
-
-% -------------------------------------------------------------
-
-
-% ============================================================
+theta=pinv(X'*X + lambda.*lambdaMatrix)*X'*y;
 
 end

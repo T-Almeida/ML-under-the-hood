@@ -1,3 +1,6 @@
+% using some function from other folder
+addpath("../1-Linear&PolynomialRegression");
+
 %linear regretion with regularization and using fminunc example
 fprintf('Linear regretion with regularization and using fminunc example\n');
 
@@ -97,6 +100,25 @@ ylabel('Y - values');
 xlabel('X - values'); 
 theta
 
-fprintf('Regularization result in more smooth polynomial\n');
+fprintf('Regularization result is more smooth polynomial\n');
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+fprintf('Same situation but now with regularization normal equation\n');
+
+lambda = 100;
+
+theta=normalEqn(X_poly,y,lambda);
+
+%plot data
+fprintf('Plot Data.\n');
+figure;
+hold on;
+plot(X, y, 'rx', 'MarkerSize', 10); % Plot the data
+plot(X, X_poly*theta,'-');
+ylabel('Y - values');
+xlabel('X - values'); 
+theta
+
 fprintf('Program paused. Press enter to continue.\n');
 pause;
