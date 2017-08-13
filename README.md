@@ -31,3 +31,8 @@ What the folder contains:
  * Multi class classifier prediction (one vs all strategy)
  * Ex and Examples
  
+3 Multi-Class and Neural Networks
+ * More Multi class classifier train and prediction
+ * Tested with image (digits) dataset (prety cool)
+ * Neural Network froward propagation (prediction)
+ * Ex and Examples
