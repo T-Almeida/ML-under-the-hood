@@ -1,6 +1,6 @@
 # ML-under-the-hood
 
-This repository have implementation of various machine learning algorithms
+This repository have implementation of various machine learning algorithms, in folder 4 is an implementaion of the library to manipulate fully connected neural networks
 
 Many code and concepts follow [Stanford Machine Learning Class](https://www.coursera.org/learn/machine-learning), so if you are taking the class follow stanfor honor code. But as you can see some examples are different and represent different problems
 
@@ -36,3 +36,15 @@ What the folder contains:
  * Tested with image (digits) dataset (prety cool)
  * Neural Network froward propagation (prediction)
  * Ex and Examples
+
+4 Neural Networks
+ * Training neural network with backpropagation
+ * Generate synthetic samples from semantic knowledge (in this case mean and std from Data :(, better case would be from ontology )
+ * Manual method of compute partial derivatives to check if backpropagation is well implemented
+ * Full MNIST data set 60000 samples (50000 for trainig 10000 for test)
+ * "Mini" Library for create fully connected neural networks of any size (NN_mini_lib)
+ 	- Create fully connected Neural Network 
+ 	- Train that Neural Network
+ 	- Make predictions (classification problems) with the trained Neural network
+ * Ex and Examples, "example_mini_lib" correspond to example using the library
+ * "example_mini_lib3" train and test one Neural Network that only have 1.78% error on MNIST data set, since we are not using advanced techniques like batch normalization, dropout, more sophisticated activation functions this isn't a bad result at all :P
