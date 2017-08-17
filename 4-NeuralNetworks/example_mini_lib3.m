@@ -38,7 +38,8 @@ NN = createNeuralNetwork(dim_layers);
 
 fprintf('\nTraining Neural Network... \n')
 lambda = 1;
-NN = trainNeuralNetwork(NN,X_train,y_train,lambda,500);
+dropout = 1;
+NN = trainNeuralNetwork(NN,X_train,y_train,lambda,dropout,500);
 
 fprintf('\nTest Neural Network ...\n')
 pred = neuralNetworkPredict(NN,X_test);

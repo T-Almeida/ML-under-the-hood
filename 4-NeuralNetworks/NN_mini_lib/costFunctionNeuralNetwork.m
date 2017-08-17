@@ -1,4 +1,4 @@
-function [J grad] = costFunctionNeuralNetwork(nn_params,NN, X, y,lambda)
+function [J grad] = costFunctionNeuralNetwork(nn_params,NN, X, y,lambda,dropout)
 % Train a NeuralNetwork represent in Struct NN with training data X an
 Thetas = cell(NN.num_layers-1,1);
 
@@ -15,7 +15,8 @@ m = size(X, 1);
          
 yBinaryMatrix = sparse (1:rows (y), y, 1); %MxK
 
-[a z] = feedFoward(NN,X,Thetas);
+[a z] = feedFoward(NN,X,Thetas,dropout);
+
 
 %regularization
 lambdaJ = 0;

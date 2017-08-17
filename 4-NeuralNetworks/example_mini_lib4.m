@@ -1,4 +1,5 @@
-%Neural Network apply to IRIS dataset USING NN_MINI_LIB
+%NeuralNetwork with and without dropout
+
 
 % using some function from other folder
 addpath("../1-Linear&PolynomialRegression");
@@ -25,19 +26,26 @@ m = size(X_train, 1);
 
 fprintf('\nCreate Neural Network ...\n')
 
-%% Setup Neural Network 
+%% Setup Neural Network Very deep Neural NeuralNetwork
 dim_layers = [size(X_train,2); %input
-4; % hidden
+10; % hidden
 4;
+
 3] % output
 NN = createNeuralNetwork(dim_layers);
                           
-fprintf('\nTraining Neural Network... \n')
-lambda = 1;
-dropout = 1;
-NN = trainNeuralNetwork(NN,X_train,y_train,lambda,dropout,150);
 
-fprintf('\nTest Neural Network ...\n')
+%WITH DROP OUT
+
+fprintf('\nTraining Neural Network with Dropout... \n')
+lambda = 1;
+dropout = 0.75;
+NN = trainNeuralNetwork(NN,X_train,y_train,lambda,dropout,400);
+
+fprintf('\nTest on Training Neural Network ...\n')
+pred = neuralNetworkPredict(NN,X_train);
+fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y_train)) * 100);
+fprintf('\nTest on TestSet Neural Network ...\n')
 pred = neuralNetworkPredict(NN,X_test);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y_test)) * 100);

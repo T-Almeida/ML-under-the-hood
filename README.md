@@ -45,6 +45,7 @@ What the folder contains:
  * "Mini" Library for create fully connected neural networks of any size (NN_mini_lib)
  	- Create fully connected Neural Network 
  	- Train that Neural Network
+	- Train with dropout possibility (but some erros with fmin function waiting fix)
  	- Make predictions (classification problems) with the trained Neural network
  * Ex and Examples, "example_mini_lib" correspond to example using the library
  * "example_mini_lib3" train and test one Neural Network that only have 1.78% error on MNIST data set, since we are not using advanced techniques like batch normalization, dropout, more sophisticated activation functions this isn't a bad result at all :P

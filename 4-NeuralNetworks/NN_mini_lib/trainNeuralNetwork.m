@@ -1,4 +1,4 @@
-function NN=trainNeuralNetwork(NN,X,y,lambda=0,numIter=150)
+function NN=trainNeuralNetwork(NN,X,y,lambda=0,dropout=1,numIter=150)
 % NN - NeuralNetwork structure 
 % X data
 % y labels
@@ -9,7 +9,7 @@ function NN=trainNeuralNetwork(NN,X,y,lambda=0,numIter=150)
 
   % Create "short hand" for the cost function to be minimized
   costFunction = @(p) costFunctionNeuralNetwork(p, ...
-                                     NN, X, y, lambda);
+                                     NN, X, y, lambda,dropout);
 
   % Now, costFunction is a function that takes in only one argument (the
   % neural network parameters)
